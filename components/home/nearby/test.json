@@ -1,0 +1,70 @@
+[
+    {
+        "apply_options": [
+          {
+            "apply_link": "https://www.linkedin.com/jobs/view/react-developer-w2-contract-hybrid-at-dice-3750254799",
+            "is_direct": false,
+            "publisher": "LinkedIn"
+          }
+        ],
+        "employer_company_type": "Information",
+        "employer_logo": "https://s24.q4cdn.com/133441296/files/images/brands/dice.png",
+        "employer_name": "Dice",
+        "employer_website": null,
+        "job_apply_is_direct": false,
+        "job_apply_link": "https://www.linkedin.com/jobs/view/react-developer-w2-contract-hybrid-at-dice-3750254799",
+        "job_apply_quality_score": 0.6048,
+        "job_benefits": null,
+        "job_city": null,
+        "job_country": "US",
+        "job_description": "Dice is the leading career destination for tech experts at every stage of their careers. Our client, N2 Services Inc, is seeking the following. Apply via Dice today!\n\nPosition: React Developer\n\nLocation: Dallas, TX (hybrid on-site)\n\nJob Type: W2\n\nJob Description:\n• Front-end Web Development experience (React).\n• MUST HAVE: GraphQL\n• MUST HAVE: Accessibility / a11y experience\n\nReact Developer - W2 Contract (Hybrid)",
+        "job_employment_type": "CONTRACTOR",
+        "job_experience_in_place_of_education": false,
+        "job_google_link": "https://www.google.com/search?gl=us&hl=en&rciv=jb&q=react+developer&start=0&ibp=htl;jobs#fpstate=tldetail&htivrt=jobs&htiq=react+developer&htidocid=8JPdIR_juOWivphQAAAAAA%3D%3D",
+        "job_highlights": {
+          "Qualifications": [
+            "Front-end Web Development experience (React)",
+            "MUST HAVE: GraphQL",
+            "MUST HAVE: Accessibility / a11y experience"
+          ]
+        },
+        "job_id": "8JPdIR_juOWivphQAAAAAA==",
+        "job_is_remote": true,
+        "job_job_title": null,
+        "job_latitude": 37.09024,
+        "job_longitude": -95.71289,
+        "job_max_salary": null,
+        "job_min_salary": null,
+        "job_naics_code": "519130",
+        "job_naics_name": "Internet Publishing and Broadcasting and Web Search Portals",
+        "job_offer_expiration_datetime_utc": "2023-11-26T10:10:18.000Z",
+        "job_offer_expiration_timestamp": 1700993418,
+        "job_onet_job_zone": "3",
+        "job_onet_soc": "15113400",
+        "job_posted_at_datetime_utc": "2023-10-27T10:10:18.000Z",
+        "job_posted_at_timestamp": 1698401418,
+        "job_posting_language": "en",
+        "job_publisher": "LinkedIn",
+        "job_required_education": {
+          "associates_degree": false,
+          "bachelors_degree": true,
+          "degree_mentioned": false,
+          "degree_preferred": false,
+          "high_school": false,
+          "postgraduate_degree": false,
+          "professional_certification": false,
+          "professional_certification_mentioned": false
+        },
+        "job_required_experience": {
+          "experience_mentioned": true,
+          "experience_preferred": false,
+          "no_experience_required": false,
+          "required_experience_in_months": null
+        },
+        "job_required_skills": null,
+        "job_salary_currency": null,
+        "job_salary_period": null,
+        "job_state": null,
+        "job_title": "React Developer - W2 Contract (Hybrid)"
+      }
+    ]
