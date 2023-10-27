@@ -5,6 +5,7 @@ import { Stack, useRouter, useGlobalSearchParams } from 'expo-router'
 import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } from '../../components';
 import { COLORS, icons, SIZES } from '../../constants';
 import useFetch from '../../hook/useFetch';
+/* Production Mode: Delete the next line */
 import dummy from '../../components/home/nearby/test.json';
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
@@ -21,11 +22,13 @@ const JobDetails = () => {
     const displayTabContent = () => {
         switch (activeTab){
             case "Qualifications":
-                break;
+                return <Specifics
+                title="Qualifications"
+                /* Production Mode: On the next line, set "datas" to "data" */
+                points={datas[0].job_highlights?.qualifications ?? ['N/A']}
+                />
             case "About":
-                break;
             case "Responsibilities":
-                break;
             default:
                 break;
         }
@@ -35,6 +38,7 @@ const JobDetails = () => {
         job_id: params.id
     })
 
+/* Production Mode: Delete the next line */
     const datas = dummy;
 
   return (
