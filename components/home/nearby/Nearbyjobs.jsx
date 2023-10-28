@@ -6,8 +6,6 @@ import styles from './nearbyjobs.style';
 import { COLORS } from '../../../constants';
 import NearbyJobCard from '../../common/cards/nearby/NearbyJobCard';
 import useFetch from '../../../hook/useFetch';
-/* Production Mode: Delete the next line */
-import dummy from './test.json';
 
 const Nearbyjobs = () => {
 
@@ -16,9 +14,6 @@ const Nearbyjobs = () => {
     query: 'React developer',
     num_pages: 1,
   });
-
-  /* Production Mode: Delete the next line */
-   const datas = dummy;
 
   return (
     <View style={styles.container}>
@@ -32,12 +27,10 @@ const Nearbyjobs = () => {
       <View style={styles.cardsContainer}>
         {isLoading ? (
           <ActivityIndicator size="large" color={COLORS.primary} />
-          /* Production Mode: On the next line, set false to "error" */
-        ) : false ? (
+        ) : error ? (
           <Text>Something went wrong...</Text>
         ) :(
-          /* Production Mode: On the next line, set datas to "data" */
-          datas?.map((job) => (
+          data?.map((job) => (
             <NearbyJobCard
             job={job}
             key={`nearby-job-${job?.job_id}`}

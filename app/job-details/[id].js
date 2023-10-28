@@ -5,8 +5,6 @@ import { Stack, useRouter, useGlobalSearchParams } from 'expo-router'
 import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } from '../../components';
 import { COLORS, icons, SIZES } from '../../constants';
 import useFetch from '../../hook/useFetch';
-/* Production Mode: Delete the next line */
-import dummy from '../../components/home/nearby/test.json';
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
@@ -17,26 +15,27 @@ const JobDetails = () => {
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
 
-    const onRefresh = () => { }
+    const onRefresh = useCallback(() => {
+        setRefreshing(true);
+        refetch();
+        setRefreshing(false)
+    },[])
 
     const displayTabContent = () => {
         switch (activeTab){
             case "Qualifications":
                 return <Specifics
                 title="Qualifications"
-                /* Production Mode: On the next line, set "datas" to "data" */
-                points={datas[0].job_highlights?.Qualifications ?? ['N/A']}
+                points={data[0].job_highlights?.Qualifications ?? ['N/A']}
                 />
             case "About":
                 return <JobAbout
-                /* Production Mode: On the next line, set "datas" to "data" */
-                info={datas[0].job_description ?? "No Data Provided..."}
+                info={data[0].job_description ?? "No Data Provided..."}
                 />
             case "Responsibilities":
                 return <Specifics
                 title="Responsibilities"
-                /* Production Mode: On the next line, set "datas" to "data" */
-                points={datas[0].job_highlights?.Responsibilities ?? ['N/A']}
+                points={data[0].job_highlights?.Responsibilities ?? ['N/A']}
                 />
             default:
                 break;
@@ -46,9 +45,6 @@ const JobDetails = () => {
     const { data, isLoading, error, refetch } = useFetch('job-details', {
         job_id: params.id
     })
-
-/* Production Mode: Delete the next line */
-    const datas = dummy;
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite, margin: 'auto' }}>
@@ -85,23 +81,17 @@ const JobDetails = () => {
         >
             {isLoading ? (
                 <ActivityIndicator size="large" color={COLORS.primary}/>
-                /* Production Mode: On the next line, set false to "error" */
-            ): false ? (
+            ): error ? (
                 <Text>Something went wrong...</Text>
-                /* Production Mode: On the next line, set "datas" to "data" */
-            ) : datas.length === 0 ? (
+            ) : data.length === 0 ? (
                 <Text>No Data</Text>
             ) : (
                 <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
                     <Company 
-          /* Production Mode: On the next line, set "datas" to "data" */
-                    companyLogo={datas[0].employer_logo}
-                    /* Production Mode: On the next line, set "datas" to "data" */
-                    jobTitle={datas[0].job_title}
-                    /* Production Mode: On the next line, set "datas" to "data" */
-                    companyName={datas[0].employer_name}
-                    /* Production Mode: On the next line, set "datas" to "data" */
-                    location={datas[0].job_country}
+                    companyLogo={data[0].employer_logo}
+                    jobTitle={data[0].job_title}
+                    companyName={data[0].employer_name}
+                    location={data[0].job_country}
                     />
                     <JobTabs
                     tabs={tabs}
@@ -112,9 +102,7 @@ const JobDetails = () => {
                 </View>
             )}
         </ScrollView>
-        <JobFooter 
-                    /* Production Mode: On the next line, set "datas" to "data" */
-        url={datas[0]?.job_google_link ?? 'https://careers.google.com/jobs/results'}/>
+        <JobFooter url={data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results'}/>
         </>
     </SafeAreaView>
   )
