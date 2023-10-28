@@ -29,9 +29,15 @@ const JobDetails = () => {
                 />
             case "About":
                 return <JobAbout
+                /* Production Mode: On the next line, set "datas" to "data" */
                 info={datas[0].job_description ?? "No Data Provided..."}
                 />
             case "Responsibilities":
+                return <Specifics
+                title="Responsibilities"
+                /* Production Mode: On the next line, set "datas" to "data" */
+                points={datas[0].job_highlights?.Responsibilities ?? ['N/A']}
+                />
             default:
                 break;
         }
@@ -106,6 +112,9 @@ const JobDetails = () => {
                 </View>
             )}
         </ScrollView>
+        <JobFooter 
+                    /* Production Mode: On the next line, set "datas" to "data" */
+        url={datas[0]?.job_google_link ?? 'https://careers.google.com/jobs/results'}/>
         </>
     </SafeAreaView>
   )
